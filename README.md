@@ -141,6 +141,9 @@ aira/
 │   ├── __init__.py             # Configuration initialization
 │   └── settings.py             # Configuration settings (e.g., API keys)
 │
+├── utils/
+│   ├── opensearch_utils.py     # OpenSearch utils
+│
 ├── data/                       # Directory for storing test case data
 │   └── test_cases.xlsx         # Sample test case data (replaceable)
 │
