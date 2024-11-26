@@ -2,6 +2,10 @@
 
 AIRA (**AI Regression Advisor**) is an AI-powered tool designed to enhance and streamline regression testing processes. With AIRA, you can efficiently search for test cases, generate new test cases using AI, and receive actionable testing insights to optimize your test strategy.
 
+## Demo
+
+![AIRA Demo](assets/aira-demo.gif)
+
 ## **Features**
 - **KNN-Based Test Case Retrieval**:
   - Quickly retrieve relevant test cases using a K-Nearest Neighbors (KNN) query based on semantic similarity to user input.
