@@ -187,7 +187,6 @@ aira/
 ---
 
 ## **Future Enhancements**
-- Role-based access control for managing test cases.
 - Integration with CI/CD pipelines for automated regression testing.
 - Support for multiple languages in test case descriptions.
 
