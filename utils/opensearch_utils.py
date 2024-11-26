@@ -5,7 +5,7 @@ def connect_opensearch():
     """Connect to OpenSearch."""
     return OpenSearch(
         hosts=[OPENSEARCH_HOST],
-        http_auth=("admin", "OmNamahShiavy_45")  # Adjust credentials as needed
+        http_auth=("admin", "InsertAdminPasswordHere")  # Adjust credentials as needed
     )
 
 def create_index(client, index_name):
@@ -42,7 +42,8 @@ def create_index(client, index_name):
 
 def index_document(client, document):
     """Index a document in OpenSearch."""
-    client.index(index=OPENSEARCH_INDEX, body=document)
+    document_id = document["test_case_id"]
+    client.index(index=OPENSEARCH_INDEX, id=document_id, body=document)
 
 def knn_search(query_vector, k=5):
     """Perform a KNN search in OpenSearch."""
