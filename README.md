@@ -86,7 +86,7 @@ AIRA includes a scheduled service that refreshes test cases on a daily schedule.
   - Processes test cases from the Excel file.
   - Generates embeddings for the descriptions.
   - Updates the OpenSearch index.
-
+`/trigger` API endpoint can also be used to update the test cases on an on-demand basis.
 ### **Customizing the Schedule**
 You can adjust the schedule interval in `app/scheduler.py`:
 ```python
