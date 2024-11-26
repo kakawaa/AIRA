@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRA | AI Regression Advisor</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>AIRA - AI Regression Advisor</h1>
+            <p>Search for test cases, generate new test cases using AI, and receive actionable testing insights to optimize your test strategy</p>
+        </header>
+        <section class="search-section">
+            <form method="post" class="search-form">
+                <input type="text" name="query" placeholder="Please provide feature or story or test or defect details" required>
+                <label>
+                    <input type="checkbox" name="use_chatgpt"> Include AI suggestions
+                </label>
+                <button type="submit">🔍 Search</button>
+            </form>
+        </section>
+        {% if open_search_results or chatgpt_suggestions %}
+        <section class="results-section">
+            <h2>Results</h2>
+
+            <!-- Focused Test Summary -->
+            {% if focused_summary %}
+            <div class="focused-summary">
+                <h3>Test Focus</h3>
+                <p>{{ focused_summary }}</p>
+            </div>
+            {% endif %}
+
+            <!-- OpenSearch Results -->
+            <h3>OpenSearch Results</h3>
+            <div class="table-wrapper">
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>Test Case ID</th>
+                            <th>Description</th>
+                            <th>Pre-requisite</th>
+                            <th>Steps</th>
+                            <th>Expected Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for result in open_search_results %}
+                        <tr>
+                            <td>{{ result.test_case_id }}</td>
+                            <td>{{ result.test_description }}</td>
+                            <td>{{ result.pre_requisite }}</td>
+                            <td>{{ result.test_steps }}</td>
+                            <td>{{ result.expected_result }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- AI-Generated Test Cases -->
+            {% if chatgpt_suggestions %}
+            <h3>AI-Generated Suggestions</h3>
+            <div class="table-wrapper">
+                <table class="modern-table">
+                    <thead>
+                        <tr>
+                            <th>Test Case ID</th>
+                            <th>Description</th>
+                            <th>Pre-requisite</th>
+                            <th>Steps</th>
+                            <th>Expected Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for result in chatgpt_suggestions %}
+                        <tr>
+                            <td>{{ result.test_case_id }}</td>
+                            <td>{{ result.test_description }}</td>
+                            <td>{{ result.pre_requisite }}</td>
+                            <td>{{ result.test_steps }}</td>
+                            <td>{{ result.expected_result }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+        </section>
+        {% endif %}
+        <footer>
+            <p>&copy; 2024 BCG | AIRA - AI Regression Advisor</p>
+        </footer>
+    </div>
+</body>
+
+</html>

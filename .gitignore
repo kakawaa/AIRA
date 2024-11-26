@@ -1,0 +1,46 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Environment variables
+.env
+*.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# macOS system files
+.DS_Store
+
+# Linux system files
+*.swp
+
+# Windows system files
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
+*.out
+
+# OpenSearch logs (if using local directories for storage)
+opensearch_logs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE specific files
+.vscode/
+.idea/
+*.iml
+
+# Ignore compiled JavaScript and CSS (optional, if generated dynamically)
+static/*.min.js
+static/*.min.css
