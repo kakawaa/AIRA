@@ -1,6 +1,6 @@
-# **AIRA - AI Regression Assistant**
+# **AIRA - AI Regression Advisor**
 
-AIRA (**AI Regression and Analysis**) is an AI-powered tool designed to enhance and streamline regression testing processes. With AIRA, you can efficiently search for test cases, generate new test cases using AI, and receive actionable testing insights to optimize your test strategy.
+AIRA (**AI Regression Advisor**) is an AI-powered tool designed to enhance and streamline regression testing processes. With AIRA, you can efficiently search for test cases, generate new test cases using AI, and receive actionable testing insights to optimize your test strategy.
 
 ## **Features**
 - **KNN-Based Test Case Retrieval**:
@@ -12,7 +12,7 @@ AIRA (**AI Regression and Analysis**) is an AI-powered tool designed to enhance 
 - **Scheduled Job**:
   - Automatically refreshes test cases from your Excel file daily, calculates embeddings, and updates the OpenSearch index.
 - **Modern UI**:
-  - Intuitive and responsive interface to search, explore, and manage test cases.
+  - Intuitive and responsive interface to search and expose test cases.
 - **Differentiation of Results**:
   - OpenSearch-derived test cases and AI-generated ones are clearly marked and separated for easy identification.
 
@@ -175,7 +175,7 @@ aira/
    - Modify the `min_score` parameter in `knn_query` to adjust the relevance of retrieved test cases.
 
 2. **Customize AI Behavior**
-   - Update the prompt in `chatgpt_service.py` to refine test case generation or focus summaries.
+   - Update the prompt in `openai_client.py` to refine test case generation or focus summaries.
 
 3. **Change Scheduling Interval**
    - Edit the `seconds` parameter in the `scheduler.add_job` configuration.
